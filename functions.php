@@ -110,7 +110,13 @@ add_action(
 						</a>	
 					</h1>
 					<?php the_post_thumbnail( 'thumbnail' ); ?>
-					<?php the_content(); ?>
+					<?php
+					if ( is_singular() ) :
+						the_content();
+					else :
+						the_excerpt();
+					endif;
+					?>
 				</article>
 			<?php
 			endwhile;
