@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/*
+Theme Name: ⽔
+Theme URI: https://learn.rtcamp.com/
+Author: Paul Clark
+Author URI: https://pd.cm/
+Description: An example theme focused on documentation.
+Requires at least: 5.0
+Tested up to: 5.8
+Requires PHP: 5.6
+Version: 1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: ⽔
+Tags: example, minimal
+*/
+
+body {
+	font-family: monospace;
+	color: #fff;
+	background: #000;
+	font-size: 5vw;
+	padding-top: 40vh;
+}
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	font-size: 2vw;
+	color: #fff;
+	width: 100vw;
+	opacity: .5;
+}
+body.admin-bar nav {
+	top: 46px;
+}
+nav ul {
+	list-style-type: none;
+}
+nav li {
+	float: left;
+	padding: 1vh 1vw;
+}
+nav a {
+	color: #fff;
+}
+article {
+	font-size:  3vw;
+}
+h1.entry-title {
+	font-size: 10vw;
+}
+#s {
+	font-size: 5vw;
+}
