@@ -142,6 +142,18 @@ add_action(
 	}
 );
 /**
+ * Add pagination after The Loop.
+ * 
+ * @see https://developer.wordpress.org/themes/functionality/pagination/
+ */
+add_action(
+	'wp_footer',
+	function(){
+		posts_nav_link();
+	},
+	-95
+);
+/**
  * Display a widget sidebar.
  *
  * @see index.php

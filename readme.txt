@@ -43,6 +43,7 @@ The Loop is added to the `wp_footer` action at priority `-100` in `functions.php
 * https://developer.wordpress.org/reference/functions/post_class/
 * https://developer.wordpress.org/reference/functions/the_title/
 * https://developer.wordpress.org/reference/functions/the_content/
+* https://developer.wordpress.org/themes/functionality/pagination/
 * https://developer.wordpress.org/reference/functions/add_theme_support/
 * https://developer.wordpress.org/reference/functions/wp_enqueue_style/
 * https://developer.wordpress.org/reference/functions/get_stylesheet_directory_uri/
