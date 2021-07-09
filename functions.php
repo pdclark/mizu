@@ -104,7 +104,11 @@ add_action(
 			while ( have_posts() ) :
 				the_post(); ?>
 				<article class="<?php echo esc_attr( post_class() ); ?>">
-					<h1 class="entry-title"><?php the_title(); ?></h1>
+					<h1 class="entry-title">
+						<a href="<?php the_permalink(); ?>">
+							<?php the_title(); ?>
+						</a>	
+					</h1>
 					<?php the_post_thumbnail( 'thumbnail' ); ?>
 					<?php the_content(); ?>
 				</article>
@@ -142,7 +146,7 @@ add_action(
 	function() {
 		?>
 		<footer class="sidebar">
-			<?php dynamic_sidebar( 'Footer' ); ?>
+			<?php dynamic_sidebar( 'footer' ); ?>
 		</footer>
 		<?php
 	},
