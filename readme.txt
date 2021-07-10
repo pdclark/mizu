@@ -27,8 +27,8 @@ The Loop is added to the `wp_footer` action at priority `-100` in `functions.php
 == Upgrade Notice ==
 
 = 1.0 =
-* Example theme with `@see` links throughout index.php and functions.php.
-* Minimal content for `index.php`, with additional meta, content loop, widget area, and navigation menu added via `functions.php`.
+* Example theme with `@see` links throughout index.php & functions.php.
+* Minimal content for `index.php`, with additional meta, content loop, widget area, & navigation menu added via `functions.php`.
 
 == Resources ==
 * https://wphierarchy.com

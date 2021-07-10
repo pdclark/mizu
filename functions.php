@@ -17,6 +17,8 @@ add_theme_support( 'post-thumbnails' );
  *
  * @see https://developer.wordpress.org/reference/functions/wp_enqueue_style/
  * @see https://developer.wordpress.org/reference/functions/get_stylesheet_directory_uri/
+ * @see https://developer.wordpress.org/reference/functions/get_stylesheet_directory/
+ * @see https://www.php.net/manual/en/function.filemtime.php
  * @see https://developer.wordpress.org/reference/functions/wp_enqueue_script/
  */
 add_action(
@@ -26,7 +28,7 @@ add_action(
 			'⽔',
 			get_stylesheet_directory_uri() . '/style.css',
 			[],
-			1
+			filemtime( get_stylesheet_directory() . '/style.css' )
 		);
 	}
 );
@@ -135,9 +137,7 @@ add_action(
 add_action(
 	'⽔/404',
 	function() {
-		?>
-		Nothing found.
-		<?php
+		echo '<h2>' . __( 'Nothing found.', '⽔' ) . '</h2>';
 		get_search_form();
 	}
 );
@@ -148,8 +148,10 @@ add_action(
  */
 add_action(
 	'wp_footer',
-	function(){
+	function() {
+		echo '<div class="pagination">';
 		posts_nav_link();
+		echo '</div>';
 	},
 	-95
 );
