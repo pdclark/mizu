@@ -98,6 +98,7 @@ add_action(
  * @see https://developer.wordpress.org/reference/functions/post_class/
  * @see https://developer.wordpress.org/reference/functions/the_title/
  * @see https://developer.wordpress.org/reference/functions/the_content/
+ * @see https://developer.wordpress.org/reference/functions/the_excerpt/
  */
 add_action(
 	'wp_footer',
@@ -156,6 +157,25 @@ add_action(
 	-95
 );
 /**
+ * Add comments after pagination.
+ * 
+ * @see https://developer.wordpress.org/themes/template-files-section/partial-and-miscellaneous-template-files/comment-template/
+ */
+add_action(
+	'wp_footer',
+	function() {
+		if ( 
+			! is_singular()
+			|| ! comments_open()
+			|| post_password_required()
+		) {
+			return;
+		}
+		comments_template();
+	},
+	-80
+);
+/**
  * Display a widget sidebar.
  *
  * @see index.php
@@ -184,7 +204,7 @@ add_action(
 			[
 				'id'            => 'footer',
 				'name'          => __( 'Footer', '⽔' ),
-				'description'   => __( 'Displays at priorty -50 on wp_footer action.', '⽔' ),
+				'description'   => __( 'Displays at after the loop, pagination, & comments on the wp_footer action.', '⽔' ),
 				'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</div>',
 				'before_title'  => '<h3 class="widget-title">',
